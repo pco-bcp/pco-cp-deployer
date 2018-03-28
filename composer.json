@@ -1,0 +1,14 @@
+{
+    "name": "pco-bcp/pco-cp-deployer",
+    "type": "project",
+    "require": {
+        "deployer/deployer": "^6.1",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "authors": [
+        {
+            "name": "Dave Samojlenko",
+            "email": "dsamojlenko@gmail.com"
+        }
+    ]
+}
