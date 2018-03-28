@@ -72,6 +72,7 @@ task('deploy', [
 // Hosts
 host(getenv('HOST_IP'))
   ->set('deploy_path', '~/{{application}}')
+  ->set('branch', '8.x')
   ->user(getenv('DEPLOY_USER'))
   ->identityFile('~/.ssh/id_rsa');
 
