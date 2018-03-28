@@ -12,7 +12,7 @@ $dotenv->load();
 set('application', getenv('APPLICATION'));
 
 // Project repository
-set('repository', 'https://github.com/drupalwxt/site-pco-cities.git');
+set('repository', 'https://github.com/pco-bcp/site-pco-cities.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
