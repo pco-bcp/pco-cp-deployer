@@ -18,16 +18,16 @@ set('repository', 'https://github.com/pco-bcp/site-pco-cities.git');
 set('git_tty', true);
 
 // Shared files/dirs between deploys
-add('shared_files', [
+set('shared_files', [
 
 ]);
 
-add('shared_dirs', [
+set('shared_dirs', [
   'html/sites',
 ]);
 
 // Writable dirs by web server
-add('writable_dirs', [
+set('writable_dirs', [
   'html/sites/{{drupal_site}}/files',
 ]);
 
@@ -52,6 +52,20 @@ task('drush:unset_maintenance_mode', '
 ');
 
 task('deploy', [
+  'deploy:info',
+  'deploy:prepare',
+  'deploy:lock',
+  'deploy:release',
+  'deploy:update_code',
+  'deploy:shared',
+  'deploy:vendors',
+  'deploy:symlink',
+  'drush:cr',
+  'deploy:unlock',
+  'cleanup'
+]);
+
+task('deploy:with:db', [
   'deploy:info',
   'deploy:prepare',
   'deploy:lock',
